@@ -22,31 +22,28 @@
             margin: 10px;
         }
 
-
-
     </style>
 </head>
 <body>
     <div id="grid-container">       
-        <div class="griditem1">1</div>
-        <div class="griditem">2</div>
-        <div class="griditem">3</div>
-        <div class="griditem">4</div>
-        <div class="griditem">5</div>
-        <div class="griditem">6</div>
-        <div class="griditem">7</div>
-        <div class="griditem">8</div>
-        <div class="griditem">9</div>
+        <div class="griditem" onclick="clicar()">1</div>
+        <div class="griditem" onclick="clicar()">2</div>
+        <div class="griditem" onclick="clicar()">3</div>
+        <div class="griditem" onclick="clicar()">4</div>
+        <div class="griditem" onclick="clicar()">5</div>
+        <div class="griditem" onclick="clicar()">6</div>
+        <div class="griditem" onclick="clicar()">7</div>
+        <div class="griditem" onclick="clicar()">8</div>
+        <div class="griditem" onclick="clicar()">9</div>
 
     </div>
 
     
     <script>
-        var a = window.document.getElementsByClassName('griditem1')
-        a.addEventListener('mouseenter', entrar)
+        var a = window.document.getElementsByClassName('griditem')
 
-        function entrar(){
-            a.style.backgrouncolor = 'red'
+        function clicar(){
+            a.style.backgroundColor = 'red'
         }
 
 
