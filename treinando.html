@@ -5,18 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Treinando</title>
+    <style>
+        #humor{
+            width: 200px;
+            padding: 5px;
+            border-radius: 0px;
+            border: 1px solid rgb(177, 177, 255);
+            background-color: rgb(237, 253, 248);
+        }
+
+        #humor::placeholder{
+            font-style: italic;
+        }
+
+        #button-querosaber{
+            padding: 5px;
+            border-radius: 10px;
+            border: 0px;
+            background-color: rgb(220, 255, 244);
+        }
+
+    </style>
 </head>
 <body>
-    <p></p>
+    <div>        
+        <input type="text" placeholder="Como está seu humor hoje?" list="opcoes" id="humor">
+            <datalist id="opcoes">
+                <option value="Feliz" id=""></option>
+                <option value="Triste"></option>
+                <option value="Com raiva"></option>
+            </datalist>
+
+        <input type="button" value="Quero saber" id="button-querosaber" onclick="saberres()">
+
+        <p id="res"></p>
+    </div>
 
     <script>
-        var humor = 'triste'
-        if(humor != 'triste'){
-            window.document.getElementsByName(p)
-            p.innerText = 'Não precisa ir pra psicóloga'
-        }
+       var humor = window.document.getElementById('humor')
+       var botao = window.document.getElementById('button-querosaber')
+       var resulta = humor.value
+       
     
-    
+       function saberres(){
+            var res = window.document.getElementById('res')
+            res.innerText = `Você está ${humor}`
+       }
     </script>
 </body>
 </html>
