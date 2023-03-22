@@ -1,10 +1,8 @@
-var idade = 0.5
-console.log(`você tem ${idade} anos`)
+var idade = 16
 if (idade < 16){
-    console.log('vc não vota viado')
-}else if (idade < 18 || idade >65) {
-        console.log('Se quiser votar vota bixa!')
-}else {
-        console.log('voto obrigatório mô')
+        console.log('Você não vota gay <3')
+}else if (idade < 18 || idade >= 65){
+        console.log('vc n precisa votar bixa!!')
+}else{
+        console.log('Voto obrigatório bb')
 }
-

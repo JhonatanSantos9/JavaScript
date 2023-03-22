@@ -6,42 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos DOM</title>
     <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+
         div#area{
             background-color: green;
             color: white;
-            width: 200px;
-            height: 200px;
+            width: 250px;
+            height: 250px;
             line-height: 200px;
             text-align: center;
-            font-size: 24px;
         }
-
     </style>
 </head>
 <body>
-    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
-        Interaja...
+    <div id="area">
+        interaja aqui
+
+
     </div>
 
     <script>
 
-        var a = window.document.getElementById('area')
-        a.addEventListener('click', clicar)
-        a.addEventListener('mouseenter', entrar)
-        a.addEventListener('mouseout', sair)
+        var interaja = window.document.querySelector('div#area')
+        interaja.addEventListener('click', clicar)
+        interaja.addEventListener('mouseenter', entrar)
+        interaja.addEventListener('mouseout', sair)
+        interaja.addEventListener('mousedown', pressionou)
+        interaja.addEventListener('dblclick', clicouduasvezes)
+        interaja.addEventListener('mousemove', mover)
+
 
         function clicar(){
-            a.innerText = 'clicou'
-            a.style.backgroundColor = 'red'
-        }
-
-        function entrar(){
-            a.innerText = 'Entrou'
+            interaja.innerHTML = 'clicou hhehe'
+            interaja.style.background = 'red'
+            interaja.style.color = 'white'
         }
 
         function sair(){
-            a.innerText = 'Af saiu:<'
-            a.style.backgroundColor = 'green'
+            interaja.innerHTML = 'saiu a:<'
+            interaja.style.background = 'green'
+            interaja.style.color = 'white'
+        }
+
+        function entrar(){
+            interaja.style.background = 'gold'
+            interaja.innerHTML = 'entrou ahaha'
+            interaja.style.color = 'white'
+        }
+
+        function pressionou(){
+            interaja.innerHTML = 'paran >>>.<<<<'
+            interaja.style.background = 'lightpink'
+            interaja.style.color = 'white'
+        }
+
+        function clicouduasvezes(){
+            interaja.innerHTML = 'PARA -_-'
+            interaja.style.background = 'black'
+            interaja.style.color = 'white'
         }
 
     </script>

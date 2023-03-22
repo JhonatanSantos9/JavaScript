@@ -5,15 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Somando números</title>
+    <style>
+        #txtn1, #txtn2{
+            border-style: none;
+            background-color: rgb(184, 202, 219);
+            padding: 5px;
+        }
+
+        #txtn1:hover, #txtn2:hover{
+            background-color: rgb(158, 182, 204);
+            transition: 1s;
+        }
+
+
+
+    </style>
 </head>
 <body>
         <h1>Somando valores</h1>
-        <input type="number" name="txtn1" id="txtn1">+
+        <input type="number" name="txtn1" id="txtn1"> +
         <input type="number" name="txtn2" id="txtn2">
-        <input type="button" value="Somar" onclick="somar()">
+        <input type="button" value="Somar" id="botaum">
         <div id="res">Resultado</div>
 
         <script>
+            var botao = window.document.querySelector('input#botaum')
+            botao.addEventListener('click', somar)
+
             function somar(){
                 var tn1 = window.document.getElementById('txtn1')
                 var tn2 = window.document.querySelector('input#txtn2')
