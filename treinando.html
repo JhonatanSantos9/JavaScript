@@ -6,51 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Treinando</title>
     <style>
-        #humor{
-            width: 200px;
-            padding: 5px;
-            border-radius: 0px;
-            border: 1px solid rgb(177, 177, 255);
-            background-color: rgb(237, 253, 248);
-        }
 
-        #humor::placeholder{
-            font-style: italic;
-        }
-
-        #button-querosaber{
-            padding: 5px;
-            border-radius: 10px;
-            border: 0px;
-            background-color: rgb(220, 255, 244);
-        }
 
     </style>
 </head>
-<body>
-    <div>        
-        <input type="text" placeholder="Como está seu humor hoje?" list="opcoes" id="humor">
-            <datalist id="opcoes">
-                <option value="Feliz" id=""></option>
-                <option value="Triste"></option>
-                <option value="Com raiva"></option>
-            </datalist>
+<body onload="horacompleta(), periodododia(), horanumeric()">
+    <div id="datanumeric"></div>
+    <div id="datafull"></div>
+    <div id="horafull" style="display: inline-block;"></div> <div id="periodododia" style="display: inline-block;"></div>
+    <div id="horanumeric"></div>
 
-        <input type="button" value="Quero saber" id="button-querosaber" onclick="saberres()">
-
-        <p id="res"></p>
-    </div>
 
     <script>
-       var humor = window.document.getElementById('humor')
-       var botao = window.document.getElementById('button-querosaber')
-       var resulta = humor.value
+        var horafull = window.document.querySelector('div#horafull')
+
+        
+        var newdate = new Date()
+
+        var datanumeric = window.document.querySelector('div#datanumeric')
+            datanumeric.innerHTML = new Intl.DateTimeFormat('pt-BR', {
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        }).format(newdate)
+
+        var datafull = window.document.querySelector('div#datafull')
+            datafull.innerHTML = new Intl.DateTimeFormat('pt-BR', {
+            dateStyle: "short"
+        }).format(newdate)
+
+        function horanumeric(){
+            var newdate = new Date()
+            var horanumeric = window.document.querySelector('div#horanumeric')
+            horafull.innerHTML = new Intl.DateTimeFormat('pt-BR', {
+                timeStyle: "medium"
+            }).format(newdate)
+            setTimeout('horanumeric()', 500)
+        }
+
+        function periodododia(){
+            var newdate = new Date()
+            var periodododia = window.document.querySelector('div#periodododia')
+            periodododia.innerHTML = new Intl.DateTimeFormat('pt-BR', {
+                dayPeriod: "long"
+            }).format(newdate)
+            setTimeout('periodododia()', 500)
+        }
+
+        function horacompleta(){
+            var newdate = new Date()
+            var horacompleta = window.document.querySelector('div#horanumeric')
+            horacompleta.innerHTML = new Intl.DateTimeFormat('pt-BR', {
+                timeStyle: "full",
+            }).format(newdate)
+            setTimeout('horacompleta()', 500)
+        }
+        
        
-    
-       function saberres(){
-            var res = window.document.getElementById('res')
-            res.innerText = `Você está ${humor}`
-       }
     </script>
 </body>
 </html>
