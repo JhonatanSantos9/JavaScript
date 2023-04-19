@@ -6,21 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Treinando</title>
     <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
 
+        h1{
+            margin-left: 1em;
+        }
+
+        p{
+            text-indent: 2em;
+        }
+
+        #getHoras{
+            display: flex;
+        }
 
     </style>
 </head>
-<body onload="horacompleta(), periodododia(), horanumeric()">
+<body onload="horacompleta(), periodododia(), horanumeric(), atualizarHora(), atualizarData()">
+    <h1>Hora e Datas</h1>
+    <p>Aqui são exemplos de hora e data em diferentes formatações e <br>diferentes técnicas como usando o Intl e também como por exemplo <br> o getHours.</p>
+
+    <br>
+    <h4>Hora e data usando Intl</h4>
     <div id="datanumeric"></div>
     <div id="datafull"></div>
     <div id="horafull" style="display: inline-block;"></div> <div id="periodododia" style="display: inline-block;"></div>
     <div id="horanumeric"></div>
 
+    <br>
+
+    <h4>Hora e data usando getHours</h4>
+    <div id="horasgetHours"></div>
+    <div id="datagetDate"></div>
+
 
     <script>
         var horafull = window.document.querySelector('div#horafull')
-
-        
         var newdate = new Date()
 
         var datanumeric = window.document.querySelector('div#datanumeric')
@@ -61,7 +86,27 @@
             }).format(newdate)
             setTimeout('horacompleta()', 500)
         }
-        
+
+
+        function atualizarHora(){
+            var novadata = new Date()
+            var HH = novadata.getHours()
+            var MM = novadata.getMinutes()
+            var SS = novadata.getSeconds()
+            var horaFormatada = HH.toString().padStart(2, '0') + ':' + 
+                                MM.toString().padStart(2, '0') + ':' + 
+                                SS.toString().padStart(2, '0');
+            document.querySelector('div#horasgetHours').innerHTML = horaFormatada
+        }
+        setInterval(atualizarHora, 500)
+
+        function atualizarData(){
+            var data = new Date()
+            var dia = data.getDate().toString().padStart(2, '0')
+            var mes = (data.getMonth() + 1).toString().padStart(2, '0')
+            var ano = data.getFullYear().toString().padStart(2, '0')
+            document.querySelector('div#datagetDate').innerHTML = `${dia}/${mes}/${ano}`
+        }
        
     </script>
 </body>
