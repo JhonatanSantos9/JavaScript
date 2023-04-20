@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        div#container{
+            width: 300px;
+            height: 300px;
+            background-color: bisque;
+            position: relative;
+        }
+
+        div#container-child{
+            width: 150px;
+            height: 150px;
+            background-color: rgb(222, 146, 53);
+            position: absolute;
+            top: 75px;
+            left: 75px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="container-child" onclick="voltar()"></div>
+
+    </div>
+
+
+
+    <script>
+        
+        function voltar(){
+            let containerchild = window.document.querySelector('div#container-child')
+            containerchild.style.top = '0px'
+            containerchild.style.left = '0px'
+            containerchild.style.backgroundColor = 'red'
+        }
+
+
+
+    </script>
+</body>
+</html>

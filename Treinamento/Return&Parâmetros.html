@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: rgb(214, 138, 31);
+            width: 100vw;
+            height: 100vh;
+        }
+
+        div#container{
+            width: 20em;
+            height: 20em;
+            background-color: rgb(255, 181, 97);
+            text-align: center;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            top: 13em;
+        }
+
+        div#container-child{
+            width: 10em;
+            height: 10em;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="container-child"><p>RES</p></div>
+
+    </div>
+
+
+
+    <script>
+        function calcular(L){
+            return L ** 2            
+        }
+
+        var res = window.document.querySelector('p');
+        res.innerHTML = `A = ${calcular(10)}`
+        
+        
+
+    </script>
+</body>
+</html>

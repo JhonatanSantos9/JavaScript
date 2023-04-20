@@ -44,6 +44,10 @@
     <div id="datagetDate"></div>
 
 
+    <h1 id="horagrande" onmouseenter="horagrande()">HORA GRANDE</h1>
+    <h1 id="datagrande" onmouseenter="datagrande()">DATA GRANDE</h1>
+
+
     <script>
         var horafull = window.document.querySelector('div#horafull')
         var newdate = new Date()
@@ -51,13 +55,13 @@
         var datanumeric = window.document.querySelector('div#datanumeric')
             datanumeric.innerHTML = new Intl.DateTimeFormat('pt-BR', {
             day: "numeric",
-            month: "long",
+            month: "short",
             year: "numeric"
         }).format(newdate)
 
         var datafull = window.document.querySelector('div#datafull')
             datafull.innerHTML = new Intl.DateTimeFormat('pt-BR', {
-            dateStyle: "short"
+            dateStyle: "full"
         }).format(newdate)
 
         function horanumeric(){
@@ -107,7 +111,23 @@
             var ano = data.getFullYear().toString().padStart(2, '0')
             document.querySelector('div#datagetDate').innerHTML = `${dia}/${mes}/${ano}`
         }
+        setIntervar(atualizarData, 500)
        
+        function horagrande(){
+            let agora = new Date()
+            let horaH1 = new Intl.DateTimeFormat('pt-Br', {
+                timeStyle:"full"
+            }).format(agora)
+            let horas = document.querySelector('h1#horagrande').innerHTML = horaH1
+        }
+
+        function datagrande(){
+            let agora = new Date()
+            let dataH1 = new Intl.DateTimeFormat('pt-Br', {
+                dateStyle:"full"
+            }).format(agora)
+            window.document.querySelector('h1#datagrande').innerHTML = dataH1
+        }
     </script>
 </body>
 </html>
