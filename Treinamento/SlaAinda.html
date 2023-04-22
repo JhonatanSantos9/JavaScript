@@ -23,6 +23,7 @@
             width: 150px;
             height: 150px;
             background-color: rgb(222, 146, 53);
+            border-radius: 70px;
             position: absolute;
             top: 75px;
             left: 75px;
@@ -33,12 +34,27 @@
             transform: scale(1.2)
         }
 
+        .pulso{
+            animation: pulso 0.3s ease infinite;
+        }
+
+        @keyframes pulso {
+            0% {
+                transform: scale(1);
+            }
+            80% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
 
     </style>
 </head>
 <body>
     <div id="container">
-        <div id="container-child" onclick="voltar()"></div>
+        <div id="container-child" class="pulso" onclick="voltar()"></div>
 
     </div>
 
@@ -50,12 +66,15 @@
             let containerchild = window.document.querySelector('div#container-child')
             containerchild.style.top = '0px'
             containerchild.style.left = '0px'
-            containerchild.style.backgroundColor = 'red'
+            containerchild.removeAttribute('class')
             if (containerchild.style.top === '0px' && containerchild.style.left === '0px'){
                 let container = document.getElementById('container')
+                let containerchild = window.document.querySelector('div#container-child')
                 container.style.backgroundColor = '#006400'
+                containerchild.style.backgroundColor = 'red'
             }
         }
+
 
 
 
