@@ -51,6 +51,10 @@
             containerchild.style.top = '0px'
             containerchild.style.left = '0px'
             containerchild.style.backgroundColor = 'red'
+            if (containerchild.style.top === '0px' && containerchild.style.left === '0px'){
+                let container = document.getElementById('container')
+                container.style.backgroundColor = '#006400'
+            }
         }
 
 

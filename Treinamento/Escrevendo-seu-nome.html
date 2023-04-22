@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escrevendo seu nome</title>
+    <style>
+        #dayperiodo, #horario2{
+            display: inline-block;
+            margin: 0.4em;
+        }
+
+        #dayperiodo{
+            font-size: 2em;
+        }
+
+
+    </style>
+</head>
+<body onload="horaagora(), horaagora2()">
+    <h2>Vou descobrir seu nome</h2>
+    <input type="text" name="txt" id="txt-input" placeholder="Digite seu nome aqui infeliz">
+    <input type="button" value="Descobrir" onclick="resultado()">
+    <p id="res">Seu nome é...</p>
+
+    <h1 id="horario">HORA</h1>
+    <h1 id="horario2">HORA</h1><p id="dayperiodo">a</p>
+
+    <script>
+        function resultado(){
+            let txtinput = document.getElementById('txt-input')
+            let txtvalue = txtinput.value
+            let res = document.getElementById('res')
+            if(txtvalue == 0){
+                window.alert('Não tem nada aí, escreve seu nome ae nmrl *rsrs')
+            }else{
+                res.innerHTML = `Seu nome é: ${txtvalue}`
+            }
+        }
+
+        function horaagora(){
+        var agora = new Date()
+        var hora = document.getElementById('horario')
+        hora.innerHTML = new Intl.DateTimeFormat('pt-BR',{
+            timeStyle: 'full'
+        }).format(agora)
+        setInterval(horaagora, 100)
+        }
+
+        function horaagora2(){
+            let agora = new Date()
+            let hora2 = document.getElementById('horario2')
+            let horas = agora.getHours()
+            let minutos = agora.getMinutes()
+            let segundos = agora.getSeconds()
+            hora2.innerHTML = `Agora são exatamente ${horas}:${minutos}:${segundos}`
+
+            let dayperiodo = document.getElementById('dayperiodo')
+            dayperiodo.innerHTML = new Intl.DateTimeFormat('pt-BR',{
+                dayPeriod: "long"
+            }).format(agora)
+
+            setInterval(horaagora2, 100)
+        }
+
+        
+
+
+
+
+    </script>
+</body>
+</html>
