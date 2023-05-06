@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <input type="number" name="num" id="num1"> +
+    <input type="number" name="num" id="num2">
+    <input type="button" value="Somar" id="botao"></br>
+    <input type="button" value="Limpar" id="limpar">
+    <h3>resultado:</h3>
+    <div id="res"></div>
+
+    <script>
+        window.document.querySelector('input#botao').addEventListener('click', somar)
+        window.document.querySelector('input#limpar').addEventListener('click', limpar)
+
+        function somar(){
+            let num1 = document.querySelector('input#num1')
+            let num2 = document.querySelector('input#num2')
+            let res = document.querySelector('div#res')
+            let n1 = Number(num1.value)
+            let n2 = Number(num2.value)
+            let soma = n1 + n2
+            res.innerHTML = soma
+            res.style.color = 'black'
+        }
+
+        function limpar(){
+            let num1 = document.querySelector('input#num1')
+            let num2 = document.querySelector('input#num2')
+            num1.value = ''
+            num2.value = ''
+            let res = document.querySelector('div#res')
+            res.innerHTML = 'Limpo!'
+            res.style.color = 'green'
+            setTimeout(limpo, 1090)
+        }
+
+        function limpo(){
+            let res = document.querySelector('div#res').innerHTML = ''
+        }
+
+
+    </script>
+</body>
+</html>
