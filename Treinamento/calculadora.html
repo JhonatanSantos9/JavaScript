@@ -28,6 +28,10 @@
             let soma = n1 + n2
             res.innerHTML = soma
             res.style.color = 'black'
+            if(res !== 'number'){
+                alert('Só numeros por favor')
+                limpar()
+            }
         }
 
         function limpar(){

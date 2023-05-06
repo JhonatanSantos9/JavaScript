@@ -9,7 +9,7 @@
     <style>
         form {
             width: 270px;
-            height: 300px;
+            max-height: 400px;
             background-color: #eee;
             padding: 10px;
             border-radius: 10px;
@@ -24,8 +24,19 @@
             margin-bottom: 10px;
         }
 
-        button {
+        #numeros {
             width: 50px;
+            height: 50px;
+            font-size: 24px;
+            margin: 5px;
+            border-radius: 5px;
+            background-color: #fff;
+            border: none;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        #limpar{
+            max-width: 150px;
             height: 50px;
             font-size: 24px;
             margin: 5px;
@@ -44,21 +55,23 @@
 <body>
     <form>
         <input type="text" id="resultado" readonly>
-        <button onclick="adicionar('7', event)">7</button>
-        <button onclick="adicionar('8', event)">8</button>
-        <button onclick="adicionar('9', event)">9</button>
-        <button onclick="adicionar('+', event)">+</button>
-        <button onclick="adicionar('4', event)">4</button>
-        <button onclick="adicionar('5', event)">6</button>
-        <button onclick="adicionar('-', event)">-</button>
-        <button onclick="adicionar('1', event)">1</button>
-        <button onclick="adicionar('2', event)">2</button>
-        <button onclick="adicionar('3', event)">3</button>
-        <button onclick="adicionar('*', event)">*</button>
-        <button onclick="adicionar('0', event)">0</button>
-        <button onclick="adicionar('.', event)">.</button>
-        <button onclick="adicionar('/', event)">/</button>
-        <button onclick="calcular(event)">=</button>
+        <button onclick="adicionar('7', event)" id="numeros">7</button>
+        <button onclick="adicionar('8', event)" id="numeros">8</button>
+        <button onclick="adicionar('9', event)" id="numeros">9</button>
+        <button onclick="adicionar('+', event)" id="numeros">+</button>
+        <button onclick="adicionar('4', event)" id="numeros">4</button>
+        <button onclick="adicionar('5', event)" id="numeros">5</button>
+        <button onclick="adicionar('6', event)" id="numeros">6</button>
+        <button onclick="adicionar('-', event)" id="numeros">-</button>
+        <button onclick="adicionar('1', event)" id="numeros">1</button>
+        <button onclick="adicionar('2', event)" id="numeros">2</button>
+        <button onclick="adicionar('3', event)" id="numeros">3</button>
+        <button onclick="adicionar('*', event)" id="numeros">*</button>
+        <button onclick="adicionar('0', event)" id="numeros">0</button>
+        <button onclick="adicionar('.', event)" id="numeros">.</button>
+        <button onclick="adicionar('/', event)" id="numeros">/</button>
+        <button onclick="calcular(event)" id="numeros">=</button>
+        <button onclick="" id="limpar">Limpar</button>
     </form>
 
     <script>
