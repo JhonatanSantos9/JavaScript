@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            width: 270px;
+            height: 300px;
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #resultado {
+            width: 97%;
+            height: 50px;
+            font-size: 24px;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            margin: 5px;
+            border-radius: 5px;
+            background-color: #fff;
+            border: none;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        button:hover {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="resultado" readonly>
+        <button onclick="adicionar('7', event)">7</button>
+        <button onclick="adicionar('8', event)">8</button>
+        <button onclick="adicionar('9', event)">9</button>
+        <button onclick="adicionar('+', event)">+</button>
+        <button onclick="adicionar('4', event)">4</button>
+        <button onclick="adicionar('5', event)">6</button>
+        <button onclick="adicionar('-', event)">-</button>
+        <button onclick="adicionar('1', event)">1</button>
+        <button onclick="adicionar('2', event)">2</button>
+        <button onclick="adicionar('3', event)">3</button>
+        <button onclick="adicionar('*', event)">*</button>
+        <button onclick="adicionar('0', event)">0</button>
+        <button onclick="adicionar('.', event)">.</button>
+        <button onclick="adicionar('/', event)">/</button>
+        <button onclick="calcular(event)">=</button>
+    </form>
+
+    <script>
+        function adicionar(valor, event) {
+            event.preventDefault();
+            document.getElementById('resultado').value += valor;
+        }
+
+        function calcular(event) {
+            event.preventDefault();
+            var expressao = document.getElementById('resultado').value;
+            var resultado = eval(expressao);
+            document.getElementById('resultado').value = resultado;
+        }
+    </script>
+</body>
+
+</html>
