@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form em Objeto</title>
+</head>
+<body onload="hora()">
+    <h2>hora</h2>
+    <div id="horas" style="font-style: italic; color: gray;">hora aqui</div>
+   <form id="formulario">
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome" id="nome">
+
+    <label for="idade">Idade:</label>
+    <input type="text" name="idade" id="idade">
+
+    <label for="profissao">Profissão:</label>
+    <input type="text" name="profissão" id="profissao">
+
+    <button type="submit">Enviar</button>
+   </form>
+
+
+    <script>
+
+        function hora(){
+            let agora = new Date()
+            let horas = document.querySelector('#horas')
+            let IntlHora = new Intl.DateTimeFormat('pt-br', {
+                hour:"2-digit",
+                minute:"2-digit",
+                second:"2-digit"
+            }).format(agora)
+            horas.innerHTML = IntlHora
+            setTimeout('hora()', 500)
+        }
+
+
+        class Pessoa {
+            _nome
+            _idade
+            _profissao
+
+            constructor (nome, idade, profissao){
+                this._nome = nome
+                this._idade = idade
+                this._profissao = profissao
+            }
+        }
+
+        let formulario = document.querySelector('#formulario')
+        formulario.addEventListener('submit', (event) => {
+            event.preventDefault()
+
+            let nome = document.querySelector('#nome').value
+            let idade = Number(document.querySelector('#idade').value)
+            let profissao = document.querySelector('#profissao').value
+
+            let pessoa = new Pessoa(nome, idade, profissao)
+
+            console.log(pessoa)
+        })
+
+
+
+    </script>
+</body>
+</html>

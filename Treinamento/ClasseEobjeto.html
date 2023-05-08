@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classe e Objeto</title>
+</head>
+<body>
+    
+
+
+    <script>
+        class Pessoa
+        {
+        // atribútos = variáveis ou características
+            _nome
+            _idade
+            _peso
+            _altura
+
+
+        // métodos = funções ou comportamentos
+        // método construtor
+            constructor (nome, idade, peso, altura) {
+                this._nome = nome
+                this._idade = idade
+                this._peso = peso
+                this._altura = altura
+                }
+
+        }
+
+
+        // criar novo objeto a partir da classe, instanciar
+        let pessoa1 = new Pessoa('joão', 40, 2, 80)
+        let pessoa2 = new Pessoa('maria', 79, 60, 165)
+
+        // atribuir valores para os atributos de um objeto 
+        // pessoa1._nome = 'joão'
+        // pessoa1._idade = 2
+        // pessoa1._peso = 10
+        // pessoa1._altura = 80
+
+        // pessoa2._nome = 'maria'
+        // pessoa2._idade = 79
+        // pessoa2._peso = 60
+        // pessoa2._altura = 165
+
+
+        console.log(pessoa1)
+        console.log(pessoa2)
+
+        
+
+    </script>
+</body>
+</html>
