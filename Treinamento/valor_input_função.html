@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exemplo de Passagem de Parâmetro</title>
+    <script>
+        function parImp(valor) {
+            let res = document.querySelector('#res')
+            let inputTextValue = document.querySelector('#meuInput')
+            if (valor % 2 == 0) {
+                res.innerHTML = 'É par'
+            } else {
+                res.innerHTML = 'Não é par, desculpe :('
+            }
+        }
+
+        function chamarFuncao() {
+            let inputText = document.querySelector('#meuInput')
+            let inputTextValue = inputText.value
+
+            parImp(inputTextValue)
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <input type="number" id="meuInput" placeholder="Digite um número">
+    <button onclick="chamarFuncao()">Verificar</button>
+    <div id="res">resultado</div>
+
+</body>
+
+</html>
